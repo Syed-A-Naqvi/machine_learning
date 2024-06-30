@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+
+% Packages for better formatting and math support
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{lipsum} % for dummy text
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+% Page layout
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\addtolength{\topmargin}{-2pt}
+
+% Header and footer
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\rightmark}
+\fancyfoot[C]{\thepage}
+
+% Section formatting
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Theorem, Definition, and Example environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% Custom commands for easier math notation
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\title{Regression}
+\author{Syed Arham Naqvi}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+These notes will contain a breif overview of the following topics:
+\begin{itemize}
+    \item Linear Regression
+    \item Locally Weighted Regression
+    \item Logistic Regression
+\end{itemize}
+Regression 
+
+\newpage
+
+\section{Key Concepts}
+
+\subsection{Definition and Theorems}
+\begin{definition}[Limit of a Sequence]
+    Let $\{a_n\}$ be a sequence of real numbers. We say that $a_n$ converges to $L \in \R$ if for every $\epsilon > 0$, there exists an $N \in \N$ such that for all $n > N$, $|a_n - L| < \epsilon$.
+\end{definition}
+
+\begin{theorem}[Fundamental Theorem of Algebra]
+    Every non-constant polynomial with complex coefficients has at least one complex root.
+\end{theorem}
+
+\subsection{Examples and Applications}
+\begin{example}
+    Consider the sequence $\{a_n\} = \frac{1}{n}$. This sequence converges to $0$ as $n$ approaches infinity.
+\end{example}
+
+\subsection{Notes and Remarks}
+\begin{remark}
+    The Fundamental Theorem of Algebra implies that a polynomial of degree $n$ has exactly $n$ roots in the complex plane, counting multiplicities.
+\end{remark}
+
+\section{Advanced Topics}
+
+\subsection{Differential Equations}
+\begin{itemize}
+    \item Introduction to differential equations.
+    \item First-order differential equations.
+    \begin{itemize}
+        \item Separable equations.
+        \item Linear equations.
+    \end{itemize}
+    \item Higher-order differential equations.
+\end{itemize}
+
+\subsection{Linear Algebra}
+\begin{itemize}
+    \item Vector spaces.
+    \item Linear transformations.
+    \item Eigenvalues and eigenvectors.
+    \begin{itemize}
+        \item Definition and properties.
+        \item Applications in solving systems of linear equations.
+    \end{itemize}
+\end{itemize}
+
+\section{Conclusion}
+\begin{itemize}
+    \item Summary of the main points.
+    \item Potential areas for further study.
+\end{itemize}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
