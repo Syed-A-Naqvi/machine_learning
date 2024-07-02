@@ -9,11 +9,13 @@
 \usepackage{lipsum} % for dummy text
 \usepackage{fancyhdr}
 \usepackage{titlesec}
+\usepackage{tikz}
 
 % Page layout
 \usepackage{geometry}
 \geometry{a4paper, margin=1in}
 \addtolength{\topmargin}{-2pt}
+\usetikzlibrary{shapes, arrows.meta, positioning}
 
 % Header and footer
 \setlength{\headheight}{14pt}
@@ -43,8 +45,13 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\BF}{\textbf}
+\newcommand{\BS}{\boldsymbol}
+\newcommand{\MBF}{\mathbf}
+\newcommand{\VTH}{\vec{\theta}}
+\newcommand{\ithx}{x^{(i)}}
 
-\title{Regression}
+\title{Machine Learning}
 \author{Syed Arham Naqvi}
 \date{\today}
 
@@ -55,17 +62,72 @@
 \newpage
 
 \section{Introduction}
-These notes will contain a breif overview of the following topics:
+
+\BF{Supervised learning} is a technique in which the training data are pre-labeled,
+allowing us to learn a parameterized function $\mathbf{h_{\vec{\BS{\theta}}}}$ called a
+\BF{hypothesis}, such that $h_{\VTH}:X\mapsto Y$ where $X$ is the space of input
+values and $Y$ is the space of output values. Given input $\ithx$ from the $i^{th}$ training
+example, the hypothesis should ouptut a prediction $h_{\VTH}(\ithx)$ such that
+$h_{\VTH}(\ithx) \approx y^{(i)}$.\\
+
+A cost function $\MBF{J(\VTH)}$ is used to measure the error between our predictions
+and the known target values given parameters $\VTH$. The goal is to use various optimization methods
+to adjust the parameter vector $\VTH$ such that $J(\VTH)$ is minimized.\\\\
+
+\begin{tikzpicture}[node distance=2cm, every node/.style={fill=none, font=\sffamily}, every edge/.style={draw, -Stealth, thick}]
+    % Nodes
+    \node (train) [rectangle, draw, rounded corners, text width=3cm, align=center] {Training set};
+    \node (algo) [rectangle, draw, rounded corners, text width=3cm, align=center, below=of train] {Learning algorithm};
+    \node (h) [rectangle, draw, rounded corners, text width=1cm, align=center, below=of algo] {$h$};
+    \node (x) [rectangle, draw, rounded corners, left=of h, xshift=-1.5cm, text width=2cm, align=center] {given $x$};
+    \node (y) [rectangle, draw, rounded corners, right=of h, xshift=1.5cm, text width=2cm, align=center] {predicted $y$};
+    
+    % Edges
+    \draw[->] (train) -- (algo);
+    \draw[->] (algo) -- (h);
+    \draw[->] (x) -- (h);
+    \draw[->] (h) -- (y);
+\end{tikzpicture}
+\\
+
+\BF{Regression} refers to a learning problem where $y$ is continuous while \BF{Classification}
+refers to the case where $y$ can only take on discrete values. These notes contain a breif overview
+of the following topics:
 \begin{itemize}
     \item Linear Regression
     \item Locally Weighted Regression
     \item Logistic Regression
 \end{itemize}
-Regression 
 
-\newpage
+\section{Supervised Learning}
 
-\section{Key Concepts}
+Given a labeled training set, we can represent our parameterized hypothesis function
+$h_{\VTH}(\ithx)$ or equivalently $h(\ithx)$ for the $i^{th}$ training example as a linear
+function of the features:
+\begin{align*}
+    h_{\VTH}(\ithx) &= h(\ithx)\\
+                      &= \theta_{0}x_{0}^{(i)}+\theta_{1}x_{1}^{(i)}+\theta_{2}x_{2}^{(i)}+...\\
+                      &\approx y^{(i)}.
+\end{align*}
+The $x_{0}^{(i)}$ is not actually part of the training set, it is a dummy feature defined
+$x_{0}^{(i)}=1$ $\forall i \in [1,...,m]$ where $m$ is the number of training examples.
+$\theta_{0}$ is thus the $y$-intercept of the hypothesis.
+More succinctly, we can define the linear hypothesis function for an arbitrary training example,
+\begin{equation}
+    h(x) = \sum_{i=0}^{d} \theta_{i}x_{i} = \BS{\theta}^{\MBF{T}}\MBF{x}
+\end{equation}
+where $d$ is the number of input variables (not counting $x_{0}$).
+
+Next we define a cost function that takes the parameter vector $\VTH$ as input and outputs the
+associated error between the predicted $h(\ithx)$'s and the corresponding $y^{(i)}$'s across
+all $i$ training examples:
+\begin{equation}
+    J(\VTH) = \sum_{i=0}^{n} (h(\ithx)-y^{(i)})^{2}.
+\end{equation}
+It is the minimization function through adjustments made to $\VTH$ that will allow us to fit our
+hypothesis as accurately to the training data as possible and make the best predictions. Note also
+as the training data are fixed, the $\ithx$ training examples passed to the hypothesis function
+are not actually variables as far as $J$ is concerned.
 
 \subsection{Definition and Theorems}
 \begin{definition}[Limit of a Sequence]
@@ -110,13 +172,13 @@ Regression
     \end{itemize}
 \end{itemize}
 
-\section{Conclusion}
+\section{Conclusion WOT}
 \begin{itemize}
     \item Summary of the main points.
     \item Potential areas for further study.
 \end{itemize}
 
-\bibliographystyle{plain}
-\bibliography{references}
+% \bibliographystyle{plain}
+% \bibliography{references}
 
 \end{document}
