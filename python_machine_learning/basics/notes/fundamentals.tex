@@ -1,0 +1,222 @@
+\documentclass[11pt]{article}
+
+% Packages for better formatting and math support
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{lipsum} % for dummy text
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usepackage{thmtools}
+\usepackage{thm-restate}
+
+% Page layout
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\addtolength{\topmargin}{-2pt}
+\usetikzlibrary{shapes, arrows.meta, positioning}
+
+% Header and footer
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+% \fancyhead[L]{\leftmark}
+% \fancyhead[R]{\rightmark}
+\fancyfoot[C]{\thepage}
+
+
+% Section formatting
+\titleformat{\section}
+  {\normalfont\LARGE\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\Large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\large\bfseries}{\thesubsubsection}{1em}{}
+
+\declaretheoremstyle[
+  spaceabove=15pt, spacebelow=15pt,
+  headfont=\normalfont\bfseries,       % Small caps for the theorem head
+  notefont=\normalfont\bfseries,       % Italic for the note
+  notebraces={}{},      % Square brackets around the note
+  bodyfont=\normalfont,    % Normal font for the body
+  postheadspace=1em,       % Space after the theorem head
+  headpunct={:}            % Colon after the theorem head
+]{mystyle}
+\declaretheoremstyle[
+  spaceabove=8pt, spacebelow=8pt,
+  headfont=\scshape\bfseries,       % Small caps and bold for the theorem head
+  notefont=\normalfont\bfseries,    % Bold for the note
+  notebraces={}{},                  % No braces around the note
+  bodyfont=\normalfont,             % Normal font for the body
+  headpunct={:},                    % Colon after the theorem head
+  postheadspace=1em,
+  mdframed={                       % Settings for mdframed
+    linecolor=black,
+    linewidth=0.5pt,
+    innertopmargin=2pt,
+    innerbottommargin=8pt
+  }
+]{customstyle}
+\declaretheorem[style=customstyle, numberwithin=subsection]{theorem}
+\declaretheorem[style=customstyle, sibling=theorem]{definition}
+\declaretheorem[style=mystyle, sibling=theorem]{remark}
+\declaretheorem[style=mystyle, sibling=theorem]{example}
+% Define the 'solution' environment to share the 'example' counter
+\newenvironment{solution}[1][]{%
+  \renewcommand\qedsymbol{$\blacksquare$}%
+  \def\temp{\normalfont\bfseries Solution \theexample: #1}
+  \begin{proof}[\temp]
+  \normalfont % Ensures the body is in normal font
+}{%
+  \end{proof}
+}
+
+% Custom commands for easier math notation
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\BF}{\textbf}
+\newcommand{\BS}{\boldsymbol}
+\newcommand{\MBF}{\mathbf}
+
+\title{Fundamentals for Machine Learning}
+\author{Syed Arham Naqvi}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+\lhead{Introduction}
+
+What follows is an overview of the fundamental concepts from probability and statistics required to develop a strong understanding
+of machine learning. I will attempt to summarize and articulate my understanding of the materials/examples presented in the Stanford CS109
+course readings at \BF{\underline{https://chrispiech.github.io/probabilityForComputerScientists}}. Ideally my work here can serve as a
+solid reference for future studies in Data Science.
+\newpage
+
+\section{Core Probability}
+\subsection{Counting}
+\lhead{\uppercase{Core Probability}}
+\rhead{2.1 Counting}
+
+
+\begin{definition}[Step Rule of Counting (aka Product Rule of Counting)]
+    If an experiment has two parts, where the first part can result in one of $m$ outcomes and the second part can result in one of $n$
+    outcomes regardless of the outcome of the first part, the total number of outcomes is $m \cdot n$.
+\end{definition}
+So if the outcome of the first part is from set $A$ where $|A|=m$ and the outcome from the second part is from set $B$ where $|B|=n$, then
+given that the first outcome in no way influences the second outcome, there must be $m\cdot n$ total outcomes.
+
+\begin{example}
+    Assuming the true color model in which each pixel can be $2^{24} \approx 17$million colours, how many distinct pictures can be generated
+    by a) a smartphone camera with 12 million pixels, b) a grid with 300 pixels and c) a grid with 12 pixels?
+\end{example}
+\begin{solution}
+    If each generated image is an experiement, then each pixel would be a single \textit{part} or \textit{step} of the experiment. Since the
+    color of one pixel does not influence that of another, each step is independent. Since every pixel can be one of $2^{24} \approx 17$million
+    color outcomes, the total number of generated images (experiment outcomes) must be $(17$million$)^{n}$ where $n$ is the number of pixels.
+    \begin{enumerate}[label=\alph*.]
+        \item 12 million pixels means $n=12000000$ so there are $(17$million$)^{12000000} \approx 10^{86696638}$ 
+        \item 300 pixels means $n=300$ so there are $(17$million$)^{300} \approx 10^{2167}$
+        \item 12 pixels means $n=12$ so there are $(17$million$)^{12} \approx 10^{86}$ 
+    \end{enumerate}    
+\end{solution}
+
+\begin{definition}[Mutually Exclusive Counting]
+    \label{sec:Mutually-Exclusive-Counting}
+    If the outcome of an experiment can either be drawn from set $A$ \BF{or} set $B$ where $|A\cap B| = 0$ (mutual exclusion), there are
+    $|A\cup B|=|A|+|B|$ outcomes in the experiment.
+\end{definition}
+
+\begin{example}
+    A route finding algorithm needs to find routes from Nairobi to Dar Es Salaam. It finds routes that either pass through Mt Kilimanjaro or
+    Mombasa. There are 20 routes that pass through Mt Kilimanjaro, 15 routes that pass through Mombasa and 0 routes passing through both Mt
+    Kilimanjaro and Mombasa. How many routes are there total?
+\end{example}
+\begin{solution}
+    Let $A$ be the set of routes through Mt. Kilimanjaro where $|A|=20$ and let $B$ be the set of routes through Mombasa where $|B|=15$.
+    Since there are no routes that pass through both, we know $|A \cap B| = 0$. So as per mutually exclusive counting,
+    \begin{align*}
+        \text{total outcomes (routes)} &= |A \cup B|\\
+                                       &= |A|+|B|\\
+                                       &= 20+15\\
+                                       &= 35.
+    \end{align*} 
+\end{solution}
+
+\begin{definition}[Inclusive Exclusion Counting (aka Sum Rule of Counting)]
+    \label{sec:Inclusive-Exclusion-Counting}
+    If the outcome of an experiment can either be drawn from set $A$ \BF{or} set $B$ where $|A\cap B| \neq 0$ (intersection exists), there
+    are $|A \cup B| = |A| + |B| - |A \cap B|$ outcomes in the experiment.
+\end{definition}
+
+\begin{example}
+    An 8-bit string (one byte) is sent over a network. The valid set of strings recognized by the receiver must either start with "01" or
+    end with "10". How many such strings are there?
+\end{example}
+\begin{solution}
+    Let $A$ be the set of strings beginning with "01". Since the first two bits of the 8-byte string are fixed, only the remaining 6 bits
+    can vary, and so it must be that $|A|=2^{6}=64$. A similar argument can be made for set $B$; consisting of all strings ending in "10".
+    For both sets however, we have double counted strings beginning with "01" \BF{and} ending with "10". There must be $2^{4} = 16$ such
+    strings as 4 of the 8 bits are fixed and so $|A \cap B| = 16$. So as per Sum Rule of Counting,
+    \begin{align*}
+        \text{total strings} &= |A \cup B|\\
+                             &= |A|+|B| - |A \cap B|\\
+                             &= 64 + 64 - 16\\
+                             &= 112
+    \end{align*} 
+\end{solution}
+Note that definition \ref{sec:Mutually-Exclusive-Counting} is just a special case of definition \ref{sec:Inclusive-Exclusion-Counting} when
+$|A \cap B| = 0$.
+
+\subsubsection*{Overcounting and Correcting}
+For more difficult counting problems that introduce one or more constraints on the universal set of possibilities, one strategy is to
+overcount first and then subtract the amount by which we have overcounted.
+Take for example a 4x4 grid of pixels where each pixel can be either white or blue. If we wanted to count all the configurations with an
+odd number of blue pixels and where horizontal mirrors are considered indistinct, it would be challenging to pose the problem as a sum of
+mutually exclusive counts. We can instead start by counting all possible configurations which is $2^{4} = 16$. We then note that half of
+these grids will contain an even number of blue pixels and half will contain an odd number leaving us with $\frac{2^{4}}{2} = 8$. Finally,
+we notice that each of the remaining 8 configurations with an odd number of blue pixels have a horizontally-flipped counterpart meaning
+the number of distinct configurations based on our criteria is actually $\frac{2^{4}}{2 \cdot 2} = 4$ which is the correct answer.
+\newpage
+
+\subsection{Combinatorics}
+\rhead{2.2 Combinatorics}
+
+\begin{definition}[Permutation Rule]
+    A permutation is an ordered arrangement of $n$ distinct objects. Those objects can be permuted
+    $n \cdot (n-1) \cdot (n-2) \cdot (n-3) \dots 2 \cdot 1 = n!$ ways.
+\end{definition}
+
+\begin{example}
+    How many unique orderings of characters are possible for the string "BAYES"?
+\end{example}
+\begin{solution}
+    Since all 5 objects or letters are distinct in this case, the total ways to permute "BAYES" where order is important would be
+    $5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$
+\end{solution}
+
+\begin{definition}[Permutations of In-Distinct Objects]
+    Generally, when there are $n$ objects and:
+    \begin{align*}
+        &n_{1} \text{ are the same and}\\
+        &n_{2} \text{ are the same and}\\
+        &\dots\\
+        &n_{r} \text{ are the same,}
+    \end{align*}
+    then the number of distinct permutations is, $$\frac{n!}{n_{1}! \cdot n_{1}! \cdot \dots \cdot n_{r}!}$$.
+\end{definition}
+
+% \bibliographystyle{plain}
+% \bibliography{references}
+
+\end{document}
