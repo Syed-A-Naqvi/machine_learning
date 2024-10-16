@@ -358,6 +358,16 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT ./I_1_g_pa.png
+INPUT ./I_1_g_pa.png
+INPUT ./I_1_g_pa.png
+INPUT ./I_1_g_pa.png
+INPUT ./I_1_g_pa.png
+INPUT ./I_1_g_pb.png
+INPUT ./I_1_g_pb.png
+INPUT ./I_1_g_pb.png
+INPUT ./I_1_g_pb.png
+INPUT ./I_1_g_pb.png
 INPUT k_NN_classification.aux
 INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb

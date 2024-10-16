@@ -67,8 +67,8 @@
         \caption{[Attributes 19 and 20 label encoding]}
     \end{figure}
 
-    The next set of features appear to have a clear ordinal ranking with least credit-worthy
-    on the left to most credit-worthy on the right:
+    The next set of features appear to have a clear ordinal ranking based on descriptions provided at (https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data)
+    with least credit-worthy values on the left to most credit-worthy values on the right:
     \begin{itemize}
         \item Attribute 1: Status of existing checking account
         \begin{itemize}
@@ -97,9 +97,28 @@
     \end{itemize}
 
     \newpage
-    
+
     We can visualize the value distributions of each feature for each class:
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth, height=0.35\textheight]{./I_1_g_pa.png}
+        \caption{[Ordinal Features Visualization]}
+    \end{figure}
+
+    It can clearly be observed that the features do seem to closely adhere to their listed orderings and for features that do not, we can re-label them so their
+    lexicographical order better fits the feature's observed order. This results in the following updated class distributions:
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth, height=0.35\textheight]{./I_1_g_pb.png}
+        \caption{[Ordinal Features Visualization (Re-Labelled)]}
+    \end{figure}
     
+    Label encoding the above features should now result in labels that better capture feature order, allowing for more meaningful distance measures between objects
+    during k-nearest neighbors classification.
+
+    \newpage
 
     % \begin{figure}[H]
     %     \centering
