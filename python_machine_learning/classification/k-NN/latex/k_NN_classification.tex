@@ -20,10 +20,9 @@
 \begin{document}
 
     \maketitle
-    
-    \section*{Part I:}
 
-    \subsection*{1. Preprocessing (German Credit Data)}
+    \section{Preprocessing}
+    \subsection*{German Credit Data (K-NN)}
     
     This dataset contains a mixture of ordinal, nominal and numeric features. The ordinal and nominal
     features must be processed such that Minkowski distance provides a meaningful metric
@@ -102,8 +101,8 @@
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth, height=0.35\textheight]{./I_1_g_pa.png}
-        \caption{[Ordinal Features Visualization]}
+        \includegraphics[width=\textwidth, height=0.35\textheight]{./I_1_g_c.png}
+        \caption{[Ordinal Features Visualization (Original Labeling)]}
     \end{figure}
 
     It can clearly be observed that the features do seem to closely adhere to their listed orderings and for features that do not, we can re-label them so their
@@ -111,30 +110,92 @@
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth, height=0.35\textheight]{./I_1_g_pb.png}
+        \includegraphics[width=\textwidth, height=0.35\textheight]{./I_1_g_d.png}
         \caption{[Ordinal Features Visualization (Re-Labelled)]}
     \end{figure}
     
+    \newpage
+
     Label encoding the above features should now result in labels that better capture feature order, allowing for more meaningful distance measures between objects
     during k-nearest neighbors classification.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth, height=0.15\textheight]{./I_1_g_e.png}
+        \caption{[Ordinal Features Visualization (Re-Labelled)]}
+    \end{figure}
+
+
+
+    For the remaining qualitative features, we can use a similar plotting method as above to explore the existence of order.
+    Based on the strength of potential orderings, we can either re-label values and then proceed with label encoding or apply one-hot encoding.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth, height=0.2\textheight]{./I_1_g_f.png}
+        \caption{[Qualitative Features Visualization (Original Labeling)]}
+    \end{figure}
+    
+    Only Attribute 10 seems to contain a useful order relation from least credit-worthy to most credit-worthy as follows:
+    \begin{itemize}
+        \item A102 (co-applicant) $\to$ A101 (no debtors/guarantors) $\to$ A103 (guarantor) 
+    \end{itemize}
+    Attributes 14 and 15 do not seem to possess meaningful orderings as 2 out of 3 values for both features have an almost equal distribution across both classes.
+    Hence, we shall re-label Attribute 10 to change its lexicographical order before applying label encoding and apply one-hot encoding to Attributes 14 and 15.
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}[t]{0.35\textwidth}
+            \centering
+            \includegraphics[width=\textwidth, height=0.2\textheight]{./I_1_g_g.png}
+            \caption{Attribute 10 Visualization (Re-Labeled)}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.62\textwidth}
+            \centering
+            \includegraphics[width=\textwidth, height=0.15\textheight]{./I_1_g_h.png}
+            \caption{Attribute 10 Label Encoding, Attributes 14 \& 15 One-Hot Encoding}
+        \end{minipage}
+    \end{figure}
 
     \newpage
 
-    % \begin{figure}[H]
-    %     \centering
-    %     \begin{minipage}[t]{0.47\textwidth}
-    %         \centering
-    %         % \includegraphics[width=\textwidth, height=0.35\textheight]{}
-    %         \caption{Decision tree performance based on holdout method and Gini impurity using Statlog German Credit Dataset}
-    %     \end{minipage}
-    %     \hfill
-    %     \begin{minipage}[t]{0.47\textwidth}
-    %         \centering
-    %         % \includegraphics[width=\textwidth, height=0.35\textheight]{}
-    %         \caption{Decision tree performance basd on holdout method and Gini impurity using Waveform Dataset}
-    %     \end{minipage}
-    % \end{figure}
+    Finally, we standardize the numerical features of the dataset.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth, height=0.2\textheight]{./I_1_g_i.png}
+        \caption{[Standardized Numerical Features]}
+    \end{figure}
 
-    \newpage
+    \subsection*{German Credit Data (Decision Tree)}
+
+    SciKit-Learn's decision tree classifier requires non-string feature values. As such, we apply label encoding to all qualitative features in the German Credit dataset.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth, height=0.2\textheight]{./I_1_g_j.png}
+        \caption{[Label Encoding German Data for Decision Tree Classification]}
+    \end{figure}
+
+    \subsection*{Waveform Data}
+
+    All features of the waveform dataset are numeric by default with very similar scales making this dataset highly suitable for k-NN classification. The numeric data types
+    are also compatible with scikit-learn's decision tree classifier. Hence, no preprocessing is required.
+
+    \section*{Part I (Inference Efficiency):}
+
+    \subsection{K-NN (k=5) and Decision Tree (Greedy, GINI, No Max Depth)}
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}[t]{0.5\textwidth}
+            \centering
+            \includegraphics[width=\textwidth, height=0.25\textheight]{./I_2_g_a.png}
+            \caption{[K-NN Classification for German Dataset]}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth, height=0.25\textheight]{./I_2_g_b.png}
+            \caption{[Decision Tree Classification for German Dataset]}
+        \end{minipage}
+    \end{figure}
+
 
 \end{document}

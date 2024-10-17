@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1729055707 "/home/syarnaq/Documents/Arham/School/UOIT/github/machine_learning/python_machine_learning/classification/k-NN/latex/k_NN_classification.tex" "k_NN_classification.pdf" "k_NN_classification" 1729055707
+["pdflatex"] 1729130933 "/home/syarnaq/Documents/Arham/School/UOIT/github/machine_learning/python_machine_learning/classification/k-NN/latex/k_NN_classification.tex" "k_NN_classification.pdf" "k_NN_classification" 1729130934
   "/etc/texmf/web2c/texmf.cnf" 1719876875 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/syarnaq/Documents/Arham/School/UOIT/github/machine_learning/python_machine_learning/classification/k-NN/latex/k_NN_classification.tex" 1729055706 6067 f89df02828a24af5e7aae8da208dc7cd ""
+  "/home/syarnaq/Documents/Arham/School/UOIT/github/machine_learning/python_machine_learning/classification/k-NN/latex/k_NN_classification.tex" 1729130932 8955 e991bb089078dea65e0c0abf353f4949 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -70,10 +70,18 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1719877144 2799550 197cf45c5ab7675e5c1e2767ff463eab ""
   "I_1_g_a.png" 1729046339 50210 f1542e1432e5f7a9dd2283ab4d144c01 ""
   "I_1_g_b.png" 1729047258 45022 94c2ccbe758aa90941793b4f511c1251 ""
-  "I_1_g_pa.png" 1729051898 69251 5c2bdf15ac73966b96898c3afef13362 ""
-  "I_1_g_pb.png" 1729055245 69947 5cb88612e8acdfbed1803d201a20cc73 ""
-  "k_NN_classification.aux" 1729055707 624 0318d34da9b2e65600d979de5876faf3 "pdflatex"
-  "k_NN_classification.tex" 1729055706 6067 f89df02828a24af5e7aae8da208dc7cd ""
+  "I_1_g_c.png" 1729051898 69251 5c2bdf15ac73966b96898c3afef13362 ""
+  "I_1_g_d.png" 1729055245 69947 5cb88612e8acdfbed1803d201a20cc73 ""
+  "I_1_g_e.png" 1729107754 26832 cf216e472149e60201c769156308fd50 ""
+  "I_1_g_f.png" 1729105606 32891 786194178882b4475978ecf545b8aa60 ""
+  "I_1_g_g.png" 1729108362 20290 3972750b5fc2a3ef740845c9a86a9cf5 ""
+  "I_1_g_h.png" 1729109544 67299 7b4d9235d2ddb87e7f83e223bc80f1e4 ""
+  "I_1_g_i.png" 1729111554 64223 e9dcc475b5515ee27897762122ae1e4a ""
+  "I_1_g_j.png" 1729122123 56701 d3b36bbc2617096095249dd672ba7439 ""
+  "I_2_g_a.png" 1729130762 120389 d55c39e15c645791c4a5ef89a15bb501 ""
+  "I_2_g_b.png" 1729130784 124147 317edea237f8dac4f52fde5c3d9ad4b4 ""
+  "k_NN_classification.aux" 1729130934 2167 84816b60bfd45d6fb466efadb7867063 "pdflatex"
+  "k_NN_classification.tex" 1729130932 8955 e991bb089078dea65e0c0abf353f4949 ""
   (generated)
   "k_NN_classification.aux"
   "k_NN_classification.log"
