@@ -3,8 +3,8 @@ INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/syarnaq/Documents/Arham/School/UOIT/github/machine_learning/python_machine_learning/classification/k-NN/latex/k_NN_classification.tex
-OUTPUT k_NN_classification.log
+INPUT /home/syarnaq/Documents/Arham/School/UOIT/github/machine_learning/python_machine_learning/classification/k-NN/latex/classification_inference_and_model_selection.tex
+OUTPUT classification_inference_and_model_selection.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -276,10 +276,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT ./k_NN_classification.aux
-INPUT k_NN_classification.aux
-INPUT k_NN_classification.aux
-OUTPUT k_NN_classification.aux
+INPUT ./classification_inference_and_model_selection.aux
+INPUT classification_inference_and_model_selection.aux
+INPUT classification_inference_and_model_selection.aux
+OUTPUT classification_inference_and_model_selection.aux
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -340,7 +340,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-OUTPUT k_NN_classification.pdf
+OUTPUT classification_inference_and_model_selection.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./I_1_g_a.png
 INPUT ./I_1_g_a.png
@@ -438,7 +438,7 @@ INPUT ./II_3.png
 INPUT ./II_3.png
 INPUT ./II_3.png
 INPUT ./II_3.png
-INPUT k_NN_classification.aux
+INPUT classification_inference_and_model_selection.aux
 INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
