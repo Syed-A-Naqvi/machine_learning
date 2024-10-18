@@ -21,7 +21,7 @@
 
     \maketitle
 
-    \section{Preprocessing}
+    \section*{Preprocessing}
     \subsection*{German Credit Data (K-NN)}
     
     This dataset contains a mixture of ordinal, nominal and numeric features. The ordinal and nominal
@@ -101,7 +101,7 @@
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth, height=0.35\textheight]{./I_1_g_c.png}
+        \includegraphics[width=\textwidth, height=0.3\textheight]{./I_1_g_c.png}
         \caption{[Ordinal Features Visualization (Original Labeling)]}
     \end{figure}
 
@@ -110,7 +110,7 @@
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth, height=0.35\textheight]{./I_1_g_d.png}
+        \includegraphics[width=\textwidth, height=0.3\textheight]{./I_1_g_d.png}
         \caption{[Ordinal Features Visualization (Re-Labelled)]}
     \end{figure}
     
@@ -146,13 +146,13 @@
         \begin{minipage}[t]{0.35\textwidth}
             \centering
             \includegraphics[width=\textwidth, height=0.2\textheight]{./I_1_g_g.png}
-            \caption{Attribute 10 Visualization (Re-Labeled)}
+            \caption{[Attribute 10 Visualization (Re-Labeled)]}
         \end{minipage}
         \hfill
         \begin{minipage}[t]{0.62\textwidth}
             \centering
             \includegraphics[width=\textwidth, height=0.15\textheight]{./I_1_g_h.png}
-            \caption{Attribute 10 Label Encoding, Attributes 14 \& 15 One-Hot Encoding}
+            \caption{[Attribute 10 Label Encoding, Attributes 14 \& 15 One-Hot Encoding]}
         \end{minipage}
     \end{figure}
 
@@ -181,10 +181,11 @@
 
     \section*{Part I (Inference Efficiency):}
 
-    \subsection{K-NN (k=5) and Decision Tree (Greedy, GINI, No Max Depth)}
+    \subsection*{K-NN (k=5) and Decision Tree (Greedy, GINI, No Max Depth)}
+
     \begin{figure}[H]
         \centering
-        \begin{minipage}[t]{0.5\textwidth}
+        \begin{minipage}[t]{0.48\textwidth}
             \centering
             \includegraphics[width=\textwidth, height=0.25\textheight]{./I_2_g_a.png}
             \caption{[K-NN Classification for German Dataset]}
@@ -197,5 +198,61 @@
         \end{minipage}
     \end{figure}
 
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth, height=0.25\textheight]{./I_2_w_a.png}
+            \caption{[K-NN Classification for Waveform Dataset]}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth, height=0.25\textheight]{./I_2_w_b.png}
+            \caption{[Decision Tree Classification for Waveform Dataset]}
+        \end{minipage}
+    \end{figure}
+
+    \newpage
+
+    \subsection*{Comparing Results}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth, height=0.25\textheight]{./I_3_g.png}
+        \caption{[K-NN vs Decision Tree Performance (German Dataset)]}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth, height=0.25\textheight]{./I_3_w.png}
+        \caption{[K-NN vs Decision Tree Performance (Waveform Dataset)]}
+    \end{figure}
+
+    We see that k-NN is generally a more accurate form of classification than
+    decision trees but also requires more elaborate preprocessing and greater
+    inference times.
+    
+    \newpage
+
+    \section*{Part II: Model Selection}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth, height=0.35\textheight]{./II_2.png}
+        \caption{[K-NN Classification on Waveform and German Datasets for Different k]}
+    \end{figure}
+
+    Based on evaluations performed on the validation sets, the best k value for
+    classifying Waveform data instances is k=4 and the best k value for classifying
+    German credit data instances is k=5.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth, height=0.35\textheight]{./II_3.png}
+        \caption{[Decision Tree Classification on Waveform and German Datasets with Different Max Depths]}
+    \end{figure}
+
+    Based on evaluations performed on the validation sets, the best max depth for
+    classifying Waveform data instances is 7 and the best max depth for classifying
+    German credit data instances is 6.
 
 \end{document}
