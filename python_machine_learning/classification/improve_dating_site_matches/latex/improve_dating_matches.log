@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.1)  22 OCT 2024 20:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.1)  23 OCT 2024 21:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -259,71 +259,101 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <pre_a.png, id=1, 505.89pt x 282.5757pt>
 File: pre_a.png Graphic file (type png)
 <use pre_a.png>
-Package pdftex.def Info: pre_a.png  used on input line 31.
-(pdftex.def)             Requested size: 234.88132pt x 148.74251pt.
+Package pdftex.def Info: pre_a.png  used on input line 32.
+(pdftex.def)             Requested size: 305.34264pt x 177.0664pt.
 <pre_c.png, id=3, 362.0727pt x 362.7954pt>
 File: pre_c.png Graphic file (type png)
 <use pre_c.png>
-Package pdftex.def Info: pre_c.png  used on input line 38.
+Package pdftex.def Info: pre_c.png  used on input line 39.
 (pdftex.def)             Requested size: 220.78667pt x 212.48079pt.
 <pre_b.png, id=4, 362.0727pt x 362.7954pt>
 File: pre_b.png Graphic file (type png)
 <use pre_b.png>
-Package pdftex.def Info: pre_b.png  used on input line 44.
+Package pdftex.def Info: pre_b.png  used on input line 45.
 (pdftex.def)             Requested size: 220.78667pt x 212.48079pt.
 <pre_d.png, id=5, 354.123pt x 354.123pt>
 File: pre_d.png Graphic file (type png)
 <use pre_d.png>
-Package pdftex.def Info: pre_d.png  used on input line 50.
-(pdftex.def)             Requested size: 281.87766pt x 212.48082pt.
+Package pdftex.def Info: pre_d.png  used on input line 51.
+(pdftex.def)             Requested size: 220.79137pt x 212.48082pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./pre_a.png> <./pre_c.png> <./pre_b.png>]
 <helper.png, id=18, 832.10875pt x 362.35374pt>
 File: helper.png Graphic file (type png)
 <use helper.png>
-Package pdftex.def Info: helper.png  used on input line 58.
-(pdftex.def)             Requested size: 328.82536pt x 141.64912pt.
+Package pdftex.def Info: helper.png  used on input line 60.
+(pdftex.def)             Requested size: 305.33603pt x 155.81459pt.
  [2 <./pre_d.png> <./helper.png>]
-Overfull \hbox (15.59273pt too wide) in paragraph at lines 68--71
+Overfull \hbox (15.59273pt too wide) in paragraph at lines 75--79
 \OT1/cmr/m/n/10 Although some cor-re-la-tion can be ob-served be-tween \OT1/cmr/bx/n/10 Per-cent-age Time Gam-ing \OT1/cmr/m/n/10 and \OT1/cmr/bx/n/10 Ice Cream Liters/week\OT1/cmr/m/n/10 ,
  []
 
-<NB_results.png, id=24, 739.76375pt x 377.41pt>
+<NB_results.png, id=25, 739.76375pt x 377.41pt>
 File: NB_results.png Graphic file (type png)
 <use NB_results.png>
-Package pdftex.def Info: NB_results.png  used on input line 74.
-(pdftex.def)             Requested size: 328.82697pt x 141.64357pt.
-<k-NN_selection.png, id=25, 440.1243pt x 282.5757pt>
+Package pdftex.def Info: NB_results.png  used on input line 82.
+(pdftex.def)             Requested size: 328.82697pt x 177.06023pt.
+<k-NN_selection.png, id=26, 390.258pt x 282.5757pt>
 File: k-NN_selection.png Graphic file (type png)
 <use k-NN_selection.png>
-Package pdftex.def Info: k-NN_selection.png  used on input line 90.
-(pdftex.def)             Requested size: 211.39157pt x 141.64967pt.
-<k-NN_selection_code.png, id=26, 807.015pt x 671.50874pt>
+Package pdftex.def Info: k-NN_selection.png  used on input line 101.
+(pdftex.def)             Requested size: 211.3912pt x 141.64967pt.
+<k-NN_selection_code.png, id=27, 807.015pt x 509.905pt>
 File: k-NN_selection_code.png Graphic file (type png)
 <use k-NN_selection_code.png>
-Package pdftex.def Info: k-NN_selection_code.png  used on input line 96.
-(pdftex.def)             Requested size: 253.65694pt x 177.05753pt.
+Package pdftex.def Info: k-NN_selection_code.png  used on input line 107.
+(pdftex.def)             Requested size: 253.65694pt x 177.06114pt.
 [3 <./NB_results.png> <./k-NN_selection.png> <./k-NN_selection_code.png>]
-<k-NN_validation.png, id=34, 743.77875pt x 402.50375pt>
+<k-NN_validation.png, id=36, 766.865pt x 259.97125pt>
 File: k-NN_validation.png Graphic file (type png)
 <use k-NN_validation.png>
-Package pdftex.def Info: k-NN_validation.png  used on input line 110.
-(pdftex.def)             Requested size: 328.82983pt x 141.64613pt.
- [4 <./k-NN_validation.png>] [5] (./improve_dating_matches.aux) ) 
+Package pdftex.def Info: k-NN_validation.png  used on input line 121.
+(pdftex.def)             Requested size: 328.83282pt x 120.39746pt.
+<tree_selection_code.png, id=37, 807.015pt x 350.30875pt>
+File: tree_selection_code.png Graphic file (type png)
+<use tree_selection_code.png>
+Package pdftex.def Info: tree_selection_code.png  used on input line 137.
+(pdftex.def)             Requested size: 328.82184pt x 127.47943pt.
+<tree_selection1.png, id=38, 400.3758pt x 351.2322pt>
+File: tree_selection1.png Graphic file (type png)
+<use tree_selection1.png>
+Package pdftex.def Info: tree_selection1.png  used on input line 144.
+(pdftex.def)             Requested size: 230.18985pt x 177.06268pt.
+<tree_selection2.png, id=39, 406.8801pt x 351.2322pt>
+File: tree_selection2.png Graphic file (type png)
+<use tree_selection2.png>
+Package pdftex.def Info: tree_selection2.png  used on input line 150.
+(pdftex.def)             Requested size: 230.17947pt x 177.06268pt.
+ [4 <./k-NN_validation.png> <./tree_selection_code.png> <./tree_selection1.png> <./tree_selection2.png>]
+<tree_validation.png, id=47, 710.655pt x 265.99374pt>
+File: tree_validation.png Graphic file (type png)
+<use tree_validation.png>
+Package pdftex.def Info: tree_validation.png  used on input line 164.
+(pdftex.def)             Requested size: 328.83545pt x 120.39822pt.
+
+Overfull \hbox (15.59273pt too wide) in paragraph at lines 172--176
+\OT1/cmr/m/n/10 Although some cor-re-la-tion can be ob-served be-tween \OT1/cmr/bx/n/10 Per-cent-age Time Gam-ing \OT1/cmr/m/n/10 and \OT1/cmr/bx/n/10 Ice Cream Liters/week\OT1/cmr/m/n/10 ,
+ []
+
+File: NB_results.png Graphic file (type png)
+<use NB_results.png>
+Package pdftex.def Info: NB_results.png  used on input line 179.
+(pdftex.def)             Requested size: 328.82697pt x 177.06023pt.
+[5 <./tree_validation.png>] (./improve_dating_matches.aux) ) 
 Here is how much of TeX's memory you used:
- 4953 strings out of 478287
- 81442 string characters out of 5849290
- 367244 words of memory out of 5000000
- 23104 multiletter control sequences out of 15000+600000
- 477684 words of font info for 60 fonts, out of 8000000 for 9000
+ 4989 strings out of 478287
+ 82208 string characters out of 5849290
+ 368244 words of memory out of 5000000
+ 23134 multiletter control sequences out of 15000+600000
+ 478975 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,8n,63p,405b,398s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on improve_dating_matches.pdf (5 pages, 451929 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on improve_dating_matches.pdf (5 pages, 627308 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 82 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
