@@ -408,6 +408,11 @@ INPUT ./comparison.png
 INPUT comparison.png
 INPUT ./comparison.png
 INPUT ./comparison.png
+INPUT ./comparison_table.png
+INPUT ./comparison_table.png
+INPUT comparison_table.png
+INPUT ./comparison_table.png
+INPUT ./comparison_table.png
 INPUT improve_dating_matches.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

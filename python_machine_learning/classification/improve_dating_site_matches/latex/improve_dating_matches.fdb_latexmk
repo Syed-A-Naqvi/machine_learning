@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1730011764 "/home/syarnaq/Documents/Arham/School/UOIT/github/machine_learning/python_machine_learning/classification/improve_dating_site_matches/latex/improve_dating_matches.tex" "improve_dating_matches.pdf" "improve_dating_matches" 1730011765
+["pdflatex"] 1730012616 "/home/syarnaq/Documents/Arham/School/UOIT/github/machine_learning/python_machine_learning/classification/improve_dating_site_matches/latex/improve_dating_matches.tex" "improve_dating_matches.pdf" "improve_dating_matches" 1730012617
   "/etc/texmf/web2c/texmf.cnf" 1719876875 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/syarnaq/Documents/Arham/School/UOIT/github/machine_learning/python_machine_learning/classification/improve_dating_site_matches/latex/improve_dating_matches.tex" 1730011764 6419 82e021a301dc8acc8e7dc99a75be1617 ""
+  "/home/syarnaq/Documents/Arham/School/UOIT/github/machine_learning/python_machine_learning/classification/improve_dating_site_matches/latex/improve_dating_matches.tex" 1730012616 6622 92c8bae885b6f653b6a61a926f91f250 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -69,9 +69,10 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1719877144 2799550 197cf45c5ab7675e5c1e2767ff463eab ""
   "NB_results.png" 1730004063 33918 532824a86172654aa2eb355d29a01e79 ""
   "comparison.png" 1730011719 27740 7633354eea48575f0e4a7f8962d90c8c ""
+  "comparison_table.png" 1730012566 20261 63d4fb07d6e5daaea5883fcb5ce9f5fd ""
   "helper.png" 1730004181 136618 88e594e3b73bfc634d5a2508e7177223 ""
-  "improve_dating_matches.aux" 1730011765 1894 38045f6fb4c962ee5374589a35e8ebff "pdflatex"
-  "improve_dating_matches.tex" 1730011764 6419 82e021a301dc8acc8e7dc99a75be1617 ""
+  "improve_dating_matches.aux" 1730012617 2042 c24f403dde55ac149deed38902baa8b3 "pdflatex"
+  "improve_dating_matches.tex" 1730012616 6622 92c8bae885b6f653b6a61a926f91f250 ""
   "k-NN_selection.png" 1730004507 36803 ce18d011ce1712410cc2af3898a678bb ""
   "k-NN_selection_code.png" 1730006231 75694 30b4c85ff8665ce0da9650ff5e756dc2 ""
   "pre_a.png" 1729633992 49686 80e27a3c0082f480844295f993c762b5 ""
