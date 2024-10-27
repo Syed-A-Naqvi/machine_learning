@@ -57,14 +57,13 @@
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.65\textwidth, height=0.22\textheight]{helper.png}
+        \includegraphics[width=0.75\textwidth, height=0.35\textheight]{helper.png}
         \caption{\small{Utility Functions}}
     \end{figure}
 
     The following analysis will involve model selection and validation using only
-    the \textbf{training dataset}, and then conclude with a final model comparison
-    where the selected models are first trained on the \textbf{training set}, and then
-    evaluated using the \textbf{test set}.
+    the \textbf{training dataset}. We will conclude with a final evaluation
+    and comparison of the selected models using the \textbf{test dataset}.
 
     \newpage
 
@@ -79,7 +78,7 @@
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.7\textwidth, height=0.25\textheight]{NB_results.png}
+        \includegraphics[width=0.75\textwidth, height=0.15\textheight]{NB_results.png}
         \caption{\small{Naive Bayes Cross Validation Results}}
     \end{figure}
 
@@ -87,50 +86,43 @@
 
     \subsection*{Model Selection}
 
-    We evaluate the accuracy for k-NN models using different \textbf{k} values. The train/test
-    split uses the training data and is shuffled for each of 1000 epochs during which we record model test accuracy
-    for models with values of k $\in [1,30]$. At the end of each epoch, we
-    increment the count of the k value associated with the highest accuracy score during
-    that epoch. The final distribution shows that $k=3$ has the highest accuracy an overwhelming
-    majority of the time, and thus we choose $k=3$ as our hyperparameter.
+    The training data is shuffled for each of 100 repetitions during which we iterate through
+    different k-values for k $\in [1,30]$, and calculate the corresponding test accuracy
+    using 10-fold cross validation. We maintain a running total of the test accuracy for
+    each model and then divide all accuracies by the number of repetitions (100) to get the
+    mean accuracies. The final plot shows that $k=18$ has the highest accuracy, and so this
+    is the model we select.
     
     \begin{figure}[H]
         \centering
-        \begin{minipage}[t]{0.45\textwidth}
+        \begin{minipage}[t]{0.49\textwidth}
             \centering
-            \includegraphics[width=\textwidth, height=0.2\textheight]{k-NN_selection.png}
-            \caption{\small{Best K Hyperparameter Selection Barplot}}
+            \includegraphics[width=\textwidth, height=0.25\textheight]{k-NN_selection.png}
+            \caption{\small{Best K Hyperparameter Selection Plot}}
         \end{minipage}
         \hfill
-        \begin{minipage}[t]{0.54\textwidth}
+        \begin{minipage}[t]{0.49\textwidth}
             \centering
-            \includegraphics[width=\textwidth, height=0.25\textheight]{k-NN_selection_code.png}
+            \includegraphics[width=\textwidth, height=0.17\textheight]{k-NN_selection_code.png}
             \caption{\small{Best K Hyperparameter Selection Code}}
         \end{minipage}
     \end{figure}
 
     \newpage
 
-    \subsection*{Validation}
-
-    Having selecting our model, we perform a 10-fold cross validation and determine the associated average performance
-    metrics.
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.7\textwidth, height=0.17\textheight]{k-NN_validation.png}
-        \caption{\small{k-NN Cross Validation Results (k=3)}}
-    \end{figure}
-
 \section*{Decision Tree Classification}
 
     \subsection*{Model Selection}
 
-    Using a similar approach as with K-NN classification, we shuffle the data into
-    new train/test splits for each of 1000 epochs. During each epoch, we create 
-    decision trees of different depths, for both entropy and gini impurity measures.
-    For each impurity and depth, we maintain a running total of the test accuracies
-    and average these values across the 1000 epochs at the end of the test. 
+    Using a similar approach to K-NN classification, we begin by shuffling the training data
+    for each of the 100 repetitions. We then iterate over a range of maximum tree depths,
+    creating decision trees using both entropy and Gini impurity measures. For each tree,
+    10-fold cross-validation is applied to obtain accuracy scores, which are accumulated
+    across repetitions for each depth and impurity measure. After completing all repetitions,
+    the total accuracy scores are averaged by dividing by the number of repetitions,
+    yielding the mean accuracy for each depth. Finally, we plot the average accuracies
+    by depth for both impurity measures, allowing us to identify the optimal parameters for
+    the decision tree model.
 
     \begin{figure}[H]
         \centering
@@ -152,32 +144,27 @@
         \end{minipage}
     \end{figure}
 
+    We can see that a max depth of 4 and the entropy impurity measure yields the best
+    performing decision tree model. 
+
     \newpage
-
-    \subsection*{Validation}
-
-    We see that entropy impurity with a max tree depth of 4 gives the highest test
-    accuracy score.
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.7\textwidth, height=0.17\textheight]{tree_validation.png}
-        \caption{\small{Decision Tree Validation (Entropy Impurity \& Depth = 4)}}
-    \end{figure}
 
 \section*{Test Set Validation}
 
     \subsection*{Validation}
 
-    Although some correlation can be observed between \textbf{Percentage Time Gaming} and
-    \textbf{Ice Cream Liters/week}, Gaussian Naive Bayes remains a robust classification method due to
-    roughly normal feature distributions and week/nonexistent overall feature pair correlations indicating
-    high degree of feature independence.
+    After having selected and trained the best models on the training dataset, we can now
+    make classification predictions on the unseen instances from the test dataset.
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.7\textwidth, height=0.25\textheight]{NB_results.png}
-        \caption{\small{Naive Bayes Cross Validation Results}}
+        \includegraphics[width=0.75\textwidth, height=0.4\textheight]{comparison.png}
+        \caption{\small{Model Comparison}}
     \end{figure}
+
+    In conclusion, a decision tree using entropy impurity and a maximum tree depth of 4
+    is the best model for predicting the degree to which the customer will like a given
+    person based on the provided features.
+
 
 \end{document}
