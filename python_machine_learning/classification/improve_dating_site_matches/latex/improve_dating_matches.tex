@@ -1,175 +1,143 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{cancel}
+\usepackage{amsmath, amssymb, amsthm, cancel}
 \usepackage[shortlabels]{enumitem}
 \usepackage{caption}
 \usepackage{graphicx}
-\usepackage[top=0.6in, bottom=0.6in, left=1in, right=1in]{geometry}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
 \usepackage{float}
 
-% \usepackage{titlesec}
-%     \titlespacing{\subsection}{\parindent}{15pt}{12pt}
-
-\title{\textbf{\underline{CSCI4150U: Data Mining}\\Lab 03}}
-\author{Syed Naqvi\\100590852}
+\title{\textbf{CSCI4150U: Data Mining}\\Lab 03 - Model Selection and Evaluation}
+\author{Syed Naqvi \\ Student ID: 100590852}
 \date{\today}
 
 \begin{document}
 
-    \maketitle
-    
+\maketitle
 
-    \section*{Preprocessing and Exploration:}
+\begin{abstract}
+This report walks through the preprocessing steps, model selection, and evaluation methods used for Naive Bayes,
+k-Nearest Neighbors, and Decision Tree classifiers to improve accuracy for a dating site recommendation system.
+Models are trained using a training dataset with the final model selection based on performance metrics evaluated
+using an unseen test dataset.
+\end{abstract}
 
-    We start by standardizing the features in the training data and visualizing its
-    distribution.
+\section{Introduction}
+In this experiment, we apply standard data preprocessing techniques, explore feature relationships, and select optimal models for classification using Naive Bayes, k-Nearest Neighbors (K-NN), and Decision Tree algorithms. Each model is evaluated using cross-validation, and the best models are selected based on accuracy and generalizability.
 
-    \begin{figure}[H]
+\section{Preprocessing and Exploration}
+Data preprocessing involves standardizing features to ensure they have a mean of zero and a standard deviation of one, enhancing model performance. We visualize the distribution of standardized features and inspect feature pair correlations.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{pre_a.png}
+    \caption{Distribution of Standardized Features}
+    \label{fig:standardized-distribution}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.47\textwidth]{pre_b.png}
+    \caption{Percentage Time Gaming vs Ice Cream Liters/Week}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.47\textwidth}
         \centering
-        \includegraphics[width=0.65\textwidth, height=0.25\textheight]{pre_a.png}
-        \caption{\small{Standardized Distributions}}
-    \end{figure}
-    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{pre_c.png}
+        \caption{Flyer Miles/Year vs Ice Cream Liters/Week}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.47\textwidth}
         \centering
-        \begin{minipage}[t]{0.47\textwidth}
-            \centering
-            \includegraphics[width=\textwidth, height=0.3\textheight]{pre_c.png}
-            \caption{\small{Flyer Miles/Year vs Ice Cream Liters/week}}
-        \end{minipage}
-        \hfill
-        \begin{minipage}[t]{0.47\textwidth}
-            \centering
-            \includegraphics[width=\textwidth, height=0.3\textheight]{pre_b.png}
-            \caption{\small{Percentage Time Gaming vs Ice Cream Liters/week}}
-        \end{minipage}
-    \end{figure}
-    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{pre_d.png}
+        \caption{Flyer Miles/Year vs Ice Cream Liters/Week}
+    \end{minipage}
+\end{figure}
+
+\newpage
+
+\section{Naive Bayes Classification (Gaussian Distribution)}
+\subsection{Model Validation}
+Naive Bayes is selected due to minimal correlation between features, suggesting a high degree of independence. The cross-validation results for the Gaussian Naive Bayes model are presented in Figure~\ref{fig:nb-results}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{NB_results.png}
+    \caption{Naive Bayes Cross Validation Results}
+    \label{fig:nb-results}
+\end{figure}
+
+\section{K-Nearest Neighbors (K-NN) Classification}
+\subsection{Model Selection}
+To determine the optimal $k$ value, we evaluate k values in the range $[1,30]$ using 10-fold cross-validation. The average accuracy per k-value across 100 iterations is recorded, with $k=18$ yielding the highest accuracy.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.49\textwidth}
         \centering
-        \includegraphics[width=0.47\textwidth, height=0.3\textheight]{pre_d.png}
-        \caption{\small{Flyer Miles/Year vs Percentage Time Gaming}}
-    \end{figure}
-
-    We can also define a general cross validation helper function and store frequent performance
-    metrics in a dictionary:
-
-    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{k-NN_selection.png}
+        \caption{Accuracy vs. K for K-NN}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.49\textwidth}
         \centering
-        \includegraphics[width=0.75\textwidth, height=0.35\textheight]{helper.png}
-        \caption{\small{Utility Functions}}
-    \end{figure}
+        \includegraphics[width=\textwidth]{k-NN_selection_code.png}
+        \caption{Code for Best K Selection}
+    \end{minipage}
+\end{figure}
 
-    The following analysis will involve model selection and validation using only
-    the \textbf{training dataset}. We will conclude with a final evaluation
-    and comparison of the selected models using the \textbf{test dataset}.
+\newpage
 
-    \newpage
+\section{Decision Tree Classification}
+\subsection{Model Selection}
+We create decision trees with varying depths, using entropy and Gini impurity measures, and apply 10-fold cross-validation to identify the depth and impurity measure yielding the highest accuracy.
 
-\section*{Naive Bayes Classification (Gaussian Distribution)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{tree_selection_code.png}
+    \caption{Decision Tree Model Selection Code}
+\end{figure}
 
-    \subsection*{Validation}
-
-    Although some correlation can be observed between \textbf{Percentage Time Gaming} and
-    \textbf{Ice Cream Liters/week}, Gaussian Naive Bayes remains a robust classification method due to
-    roughly normal feature distributions and week/nonexistent overall feature pair correlations indicating
-    high degree of feature independence.
-
-    \begin{figure}[H]
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.49\textwidth}
         \centering
-        \includegraphics[width=0.75\textwidth, height=0.15\textheight]{NB_results.png}
-        \caption{\small{Naive Bayes Cross Validation Results}}
-    \end{figure}
-
-\section*{K-NN Classification}
-
-    \subsection*{Model Selection}
-
-    The training data is shuffled for each of 100 repetitions during which we iterate through
-    different k-values for k $\in [1,30]$, and calculate the corresponding test accuracy
-    using 10-fold cross validation. We maintain a running total of the test accuracy for
-    each model and then divide all accuracies by the number of repetitions (100) to get the
-    mean accuracies. The final plot shows that $k=18$ has the highest accuracy, and so this
-    is the model we select.
-    
-    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{tree_selection1.png}
+        \caption{Accuracy by Impurity and Depth}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.49\textwidth}
         \centering
-        \begin{minipage}[t]{0.49\textwidth}
-            \centering
-            \includegraphics[width=\textwidth, height=0.25\textheight]{k-NN_selection.png}
-            \caption{\small{Best K Hyperparameter Selection Plot}}
-        \end{minipage}
-        \hfill
-        \begin{minipage}[t]{0.49\textwidth}
-            \centering
-            \includegraphics[width=\textwidth, height=0.17\textheight]{k-NN_selection_code.png}
-            \caption{\small{Best K Hyperparameter Selection Code}}
-        \end{minipage}
-    \end{figure}
+        \includegraphics[width=\textwidth]{tree_selection2.png}
+        \caption{Zoomed-In Accuracy by Impurity and Depth}
+    \end{minipage}
+\end{figure}
 
-    \newpage
+The optimal decision tree model uses entropy impurity with a maximum depth of 4.
 
-\section*{Decision Tree Classification}
+\newpage
 
-    \subsection*{Model Selection}
+\section{Test Set Validation}
+After model selection, we evaluate the chosen models on the test dataset. The comparison results are shown in Figure~\ref{fig:model-comparison}.
 
-    Using a similar approach to K-NN classification, we begin by shuffling the training data
-    for each of the 100 repetitions. We then iterate over a range of maximum tree depths,
-    creating decision trees using both entropy and Gini impurity measures. For each tree,
-    10-fold cross-validation is applied to obtain accuracy scores, which are accumulated
-    across repetitions for each depth and impurity measure. After completing all repetitions,
-    the total accuracy scores are averaged by dividing by the number of repetitions,
-    yielding the mean accuracy for each depth. Finally, we plot the average accuracies
-    by depth for both impurity measures, allowing us to identify the optimal parameters for
-    the decision tree model.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{comparison.png}
+    \caption{Comparison of Model Performance}
+    \label{fig:model-comparison}
+\end{figure}
 
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.7\textwidth, height=0.18\textheight]{tree_selection_code.png}
-        \caption{\small{Decision Tree Model Selection Code}}
-    \end{figure}
-    \begin{figure}[H]
-        \centering
-        \begin{minipage}[t]{0.49\textwidth}
-            \centering
-            \includegraphics[width=\textwidth, height=0.25\textheight]{tree_selection1.png}
-            \caption{\small{Accuracy by Impurity Measure and Depth}}
-        \end{minipage}
-        \hfill
-        \begin{minipage}[t]{0.49\textwidth}
-            \centering
-            \includegraphics[width=\textwidth, height=0.25\textheight]{tree_selection2.png}
-            \caption{\small{Accuracy by Impurity Measure and Depth (Zoomed-In)}}
-        \end{minipage}
-    \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{comparison_table.png}
+    \caption{Model Performance Summary}
+\end{figure}
 
-    We can see that a max depth of 4 and the entropy impurity measure yields the best
-    performing decision tree model. 
-
-    \newpage
-
-\section*{Test Set Validation}
-
-    \subsection*{Validation}
-
-    After having selected and trained the best models on the training dataset, we can now
-    make classification predictions on the unseen instances from the test dataset.
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.7\textwidth, height=0.4\textheight]{comparison.png}
-        \caption{\small{Model Comparison Plot}}
-    \end{figure}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.7\textwidth, height=0.15\textheight]{comparison_table.png}
-        \caption{\small{Model Comparison Table}}
-    \end{figure}
-
-    In conclusion, a decision tree using entropy impurity and a maximum tree depth of 4
-    is the best model for predicting the degree to which the customer will like a given
-    person based on the provided features.
-
+\section{Conclusion}
+Based on the test dataset results, the decision tree model with entropy impurity and a max depth of 4 demonstrates the
+best classification performance. This model is recommended for predicting customer dating preference based on provided
+features.
 
 \end{document}

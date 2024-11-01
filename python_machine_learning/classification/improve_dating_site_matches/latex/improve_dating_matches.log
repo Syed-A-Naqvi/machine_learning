@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.1)  27 OCT 2024 03:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.1)  1 NOV 2024 19:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -178,20 +178,20 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 ) (./improve_dating_matches.aux)
 \openout1 = `improve_dating_matches.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -223,14 +223,14 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
-* v-part:(T,H,B)=(43.36243pt, 708.24513pt, 43.36243pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=469.75502pt
-* \textheight=708.24513pt
+* \textheight=650.43001pt
 * \oddsidemargin=0.0pt
 * \evensidemargin=0.0pt
-* \topmargin=-65.90756pt
+* \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -248,103 +248,104 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <pre_a.png, id=1, 505.89pt x 282.5757pt>
 File: pre_a.png Graphic file (type png)
 <use pre_a.png>
-Package pdftex.def Info: pre_a.png  used on input line 32.
-(pdftex.def)             Requested size: 305.34264pt x 177.0664pt.
-<pre_c.png, id=3, 362.0727pt x 362.7954pt>
-File: pre_c.png Graphic file (type png)
-<use pre_c.png>
-Package pdftex.def Info: pre_c.png  used on input line 39.
-(pdftex.def)             Requested size: 220.78667pt x 212.48079pt.
-<pre_b.png, id=4, 362.0727pt x 362.7954pt>
+Package pdftex.def Info: pre_a.png  used on input line 33.
+(pdftex.def)             Requested size: 375.80544pt x 209.91765pt.
+<pre_b.png, id=3, 362.0727pt x 362.7954pt>
 File: pre_b.png Graphic file (type png)
 <use pre_b.png>
-Package pdftex.def Info: pre_b.png  used on input line 45.
-(pdftex.def)             Requested size: 220.78667pt x 212.48079pt.
-<pre_d.png, id=5, 354.123pt x 354.123pt>
-File: pre_d.png Graphic file (type png)
-<use pre_d.png>
-Package pdftex.def Info: pre_d.png  used on input line 51.
-(pdftex.def)             Requested size: 220.79137pt x 212.48082pt.
+Package pdftex.def Info: pre_b.png  used on input line 40.
+(pdftex.def)             Requested size: 220.78543pt x 221.22736pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./pre_a.png> <./pre_c.png> <./pre_b.png>]
-<helper.png, id=18, 807.015pt x 552.0625pt>
-File: helper.png Graphic file (type png)
-<use helper.png>
-Package pdftex.def Info: helper.png  used on input line 60.
-(pdftex.def)             Requested size: 352.31703pt x 247.89513pt.
- [2 <./pre_d.png> <./helper.png>]
-Overfull \hbox (15.59273pt too wide) in paragraph at lines 74--78
-\OT1/cmr/m/n/10 Although some cor-re-la-tion can be ob-served be-tween \OT1/cmr/bx/n/10 Per-cent-age Time Gam-ing \OT1/cmr/m/n/10 and \OT1/cmr/bx/n/10 Ice Cream Liters/week\OT1/cmr/m/n/10 ,
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./pre_a.png>]
+<pre_c.png, id=16, 362.0727pt x 362.7954pt>
+File: pre_c.png Graphic file (type png)
+<use pre_c.png>
+Package pdftex.def Info: pre_c.png  used on input line 48.
+(pdftex.def)             Requested size: 220.78543pt x 221.22736pt.
+
+Underfull \hbox (badness 4739) in paragraph at lines 49--49
+[]\OT1/cmr/m/n/10 Figure 3: |Flyer Miles/Year vs Ice Cream
  []
 
-<NB_results.png, id=25, 651.43375pt x 199.74625pt>
+<pre_d.png, id=17, 354.123pt x 354.123pt>
+File: pre_d.png Graphic file (type png)
+<use pre_d.png>
+Package pdftex.def Info: pre_d.png  used on input line 54.
+(pdftex.def)             Requested size: 220.78543pt x 220.79137pt.
+
+Underfull \hbox (badness 4739) in paragraph at lines 55--55
+[]\OT1/cmr/m/n/10 Figure 4: |Flyer Miles/Year vs Ice Cream
+ []
+
+[2 <./pre_b.png> <./pre_c.png> <./pre_d.png>]
+<NB_results.png, id=24, 651.43375pt x 199.74625pt>
 File: NB_results.png Graphic file (type png)
 <use NB_results.png>
-Package pdftex.def Info: NB_results.png  used on input line 81.
-(pdftex.def)             Requested size: 352.32562pt x 106.2338pt.
-<k-NN_selection.png, id=26, 400.3758pt x 295.5843pt>
+Package pdftex.def Info: NB_results.png  used on input line 67.
+(pdftex.def)             Requested size: 352.31625pt x 108.03204pt.
+<k-NN_selection.png, id=25, 400.3758pt x 295.5843pt>
 File: k-NN_selection.png Graphic file (type png)
 <use k-NN_selection.png>
-Package pdftex.def Info: k-NN_selection.png  used on input line 100.
-(pdftex.def)             Requested size: 230.18985pt x 177.06328pt.
-<k-NN_selection_code.png, id=27, 701.62125pt x 309.155pt>
+Package pdftex.def Info: k-NN_selection.png  used on input line 80.
+(pdftex.def)             Requested size: 230.18253pt x 169.9416pt.
+<k-NN_selection_code.png, id=26, 701.62125pt x 309.155pt>
 File: k-NN_selection_code.png Graphic file (type png)
 <use k-NN_selection_code.png>
-Package pdftex.def Info: k-NN_selection_code.png  used on input line 106.
-(pdftex.def)             Requested size: 230.17607pt x 120.40013pt.
-[3 <./NB_results.png> <./k-NN_selection.png> <./k-NN_selection_code.png>]
-<tree_selection_code.png, id=36, 1035.87pt x 385.44pt>
+Package pdftex.def Info: k-NN_selection_code.png  used on input line 86.
+(pdftex.def)             Requested size: 230.18253pt x 101.42236pt.
+ [3 <./NB_results.png> <./k-NN_selection.png> <./k-NN_selection_code.png>]
+<tree_selection_code.png, id=34, 1035.87pt x 385.44pt>
 File: tree_selection_code.png Graphic file (type png)
 <use tree_selection_code.png>
-Package pdftex.def Info: tree_selection_code.png  used on input line 129.
-(pdftex.def)             Requested size: 328.82974pt x 127.47789pt.
-<tree_selection1.png, id=37, 427.1157pt x 351.2322pt>
+Package pdftex.def Info: tree_selection_code.png  used on input line 99.
+(pdftex.def)             Requested size: 328.82707pt x 122.35526pt.
+<tree_selection1.png, id=35, 427.1157pt x 351.2322pt>
 File: tree_selection1.png Graphic file (type png)
 <use tree_selection1.png>
-Package pdftex.def Info: tree_selection1.png  used on input line 136.
-(pdftex.def)             Requested size: 230.18283pt x 177.06268pt.
-<tree_selection2.png, id=38, 433.62pt x 351.2322pt>
+Package pdftex.def Info: tree_selection1.png  used on input line 107.
+(pdftex.def)             Requested size: 230.18253pt x 189.2874pt.
+<tree_selection2.png, id=36, 433.62pt x 351.2322pt>
 File: tree_selection2.png Graphic file (type png)
 <use tree_selection2.png>
-Package pdftex.def Info: tree_selection2.png  used on input line 142.
-(pdftex.def)             Requested size: 230.18141pt x 177.06268pt.
+Package pdftex.def Info: tree_selection2.png  used on input line 113.
+(pdftex.def)             Requested size: 230.18253pt x 186.44695pt.
  [4 <./tree_selection_code.png> <./tree_selection1.png> <./tree_selection2.png>]
-<comparison.png, id=45, 416.2752pt x 327.3831pt>
+<comparison.png, id=43, 416.2752pt x 327.3831pt>
 File: comparison.png Graphic file (type png)
 <use comparison.png>
-Package pdftex.def Info: comparison.png  used on input line 161.
-(pdftex.def)             Requested size: 328.8411pt x 283.29738pt.
-<comparison_table.png, id=46, 438.63875pt x 125.46875pt>
+Package pdftex.def Info: comparison.png  used on input line 127.
+(pdftex.def)             Requested size: 328.82707pt x 258.61981pt.
+<comparison_table.png, id=44, 438.63875pt x 125.46875pt>
 File: comparison_table.png Graphic file (type png)
 <use comparison_table.png>
-Package pdftex.def Info: comparison_table.png  used on input line 166.
-(pdftex.def)             Requested size: 328.831pt x 106.2373pt.
+Package pdftex.def Info: comparison_table.png  used on input line 134.
+(pdftex.def)             Requested size: 328.82707pt x 94.05919pt.
  [5 <./comparison.png> <./comparison_table.png>] (./improve_dating_matches.aux) ) 
 Here is how much of TeX's memory you used:
- 4989 strings out of 478287
- 82180 string characters out of 5849290
- 368244 words of memory out of 5000000
- 23134 multiletter control sequences out of 15000+600000
- 478975 words of font info for 66 fonts, out of 8000000 for 9000
+ 4980 strings out of 478287
+ 82062 string characters out of 5849290
+ 368301 words of memory out of 5000000
+ 23126 multiletter control sequences out of 15000+600000
+ 477728 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,63p,405b,398s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on improve_dating_matches.pdf (5 pages, 611032 bytes).
+ 55i,8n,63p,529b,364s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on improve_dating_matches.pdf (5 pages, 516351 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
+ 80 PDF objects out of 1000 (max. 8388607)
  34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
