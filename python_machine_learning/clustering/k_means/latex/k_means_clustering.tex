@@ -19,8 +19,14 @@
 \maketitle
 
 \begin{abstract}
-blablabla
+This report analyzes K-means and Hierarchical clustering on the Breast Cancer Wisconsin and Waveform datasets, using Sum of Squared Errors
+(SSE) as a metric and the elbow method for k-means model selection. Hierarchical clustering methods (Single, Complete, and Group Average
+Link) are visualized using dendrograms. Findings show K-means effectively identifies natural groupings in the data and Hierarchical
+clustering confirms these groupings by revealing a significantly reduced rate of inter-cluster distance reductions beyond optimal
+partitioning. The report highlights the effectiveness of K-means and Hierarchical clustering algorithms in finding natural data clusters.
 \end{abstract}
+    
+    
 
 \section{Introduction}
 
@@ -97,104 +103,96 @@ The feature values have now been scaled and are significantly better suitable fo
 
 From the above figures, the ideal number of clusters is \textbf{k=2} for the Breast Cancer dataset and \textbf{k=3} for the Waveform dataset. This
 suggests there are likely 3 distinct waveforms in the Waveform dataset and two distinct tumor categorizations (malignant or benign)
-in the Breast Cancer dataset which is of course consistent with the actual number of unique labels in both datasets.  
+in the Breast Cancer dataset which is of course consistent with the actual number of unique labels in both datasets.
 
+\subsection{Results}
 
-\subsubsection{IBk Classification}
-Table~\ref{tab:ibk-results} presents the accuracy of IBk classification for K values 1, 3, and 5 across the three datasets.
-
-\begin{table}[H]
+Using the ideal cluster amounts for each dataset, the following tables display centroids with lowest SSE scores achieved through
+convergence with a maximum of 300 iterations and 10 rounds of unique seed placement.
+\begin{figure}[H]
     \centering
-    \caption{Accuracy of IBk Classification}
-    \label{tab:ibk-results}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        \textbf{Dataset} & \textbf{K=1} & \textbf{K=3} & \textbf{K=5} \\
-        \hline
-        letter & 96.03 & 95.62 & 95.52 \\
-        \hline
-        segment & 97.14 & 96.02 & 95.06 \\
-        \hline
-        waveform-5000 & 73.62 & 77.7 & 78.94 \\
-        \hline
-    \end{tabular}
-\end{table}
-
-\subsubsection{J48 and AdaBoostM1 Classification}
-Table~\ref{tab:j48-adaboost-results} summarizes the accuracy results for J48 with M values of 2 and 4, and AdaBoostM1 with J48 (M=2) as the base classifier.
-
-\begin{table}[H]
+    \includegraphics[width=\textwidth]{cancer_centroids.png}
+    \caption{Centroids (Breast Cancer Dataset)}
+\end{figure}
+\begin{figure}[H]
     \centering
-    \caption{Accuracy of J48 and AdaBoostM1 Classification}
-    \label{tab:j48-adaboost-results}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        \textbf{Dataset} & \textbf{J48 (M=2)} & \textbf{J48 (M=4)} & \textbf{AdaBoostM1+J48 (M=2)} \\
-        \hline
-        letter & 87.98 & 86.56 & 95.54 \\
-        \hline
-        segment & 96.93 & 96.06 & 98.53\\
-        \hline
-        waveform-5000 & 75.08 & 75.82 & 80.68 \\
-        \hline
-    \end{tabular}
-\end{table}
+    \includegraphics[width=\textwidth]{waveform_centroids.png}
+    \caption{Centroids (Waveform Dataset)}
+\end{figure}
 
-\subsubsection{NaiveBayes Classification}
-Table~\ref{tab:naivebayes-results} provides the accuracy results for NaiveBayes classification on each dataset.
-
-\begin{table}[H]
+Using Euclidean distance as our metric, we can view the top five closest points in each cluster to their centroid across both datasets.
+\begin{figure}[H]
     \centering
-    \caption{Accuracy of NaiveBayes Classification}
-    \label{tab:naivebayes-results}
-    \begin{tabular}{|c|c|}
-        \hline
-        \textbf{Dataset} & \textbf{Accuracy (\%)} \\
-        \hline
-        letter & 64.12 \\
-        \hline
-        segment & 80.22 \\
-        \hline
-        waveform-5000 & 80.00 \\
-        \hline
-    \end{tabular}
-\end{table}
+    \begin{minipage}[b]{0.47\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.3\textheight]{top_five_cancer.png}
+        \caption{Top five closest points to their cluster centroids (Breast Cancer Dataset)}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.47\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.3\textheight]{top_five_waveform.png}
+        \caption{Top five closest points to their cluster centroids (Waveform Dataset)}
+    \end{minipage}
+\end{figure}
 
 \newpage
 
 \section{Part II: Clustering Task}
 
-\subsection{Methodology}
-For the clustering task, we use SimpleKMeans to cluster each dataset with specified K values. We use the training set and evaluate each K-means model by measuring the Sum of Squared Errors (SSE). The chosen K values for each dataset are:
-\begin{itemize}
-    \item \textbf{letter}: K = 11, 24, 38
-    \item \textbf{segment}: K = 3, 5, 10
-    \item \textbf{waveform-5000}: K = 2, 3, 5
-\end{itemize}
+Next, we use dendrograms to visualize the Single Link, Complete Link and Group Average forms of Hierarchical clustering. We truncate the
+graphs above 30 separate clusters and visualize when the various distance metrics seems to converge.
 
-\subsection{Results}
-Table~\ref{tab:kmeans-sse-results} shows the SSE results for SimpleKMeans clustering for each dataset with different K values.
-
-\begin{table}[H]
+\begin{figure}[H]
     \centering
-    \caption{SSE of SimpleKMeans Clustering}
-    \label{tab:kmeans-sse-results}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        \textbf{Dataset} & \textbf{K=K1} & \textbf{K=K2} & \textbf{K=K3} \\
-        \hline
-        letter & 16513.56 & 9824.97 & 5132.69 \\
-        \hline
-        segment & 2173.14 & 1296.73 & 759.97 \\
-        \hline
-        waveform-5000 & 5465.74 &3846.65 & 3432.81 \\
-        \hline
-    \end{tabular}
-\end{table}
+    \begin{minipage}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.3\textheight]{single_cancer_dend.png}
+        \caption{Single Link Hierarchical Clustering (Breast Cancer Dataset)}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.3\textheight]{single_waveform_dend.png}
+        \caption{Single Link Hierarchical Clustering (Waveform Dataset)}
+    \end{minipage}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.3\textheight]{complete_cancer_dend.png}
+        \caption{Complete Link Hierarchical Clustering (Breast Cancer Dataset)}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.3\textheight]{complete_waveform_dend.png}
+        \caption{Complete Link Hierarchical Clustering (Waveform Dataset)}
+    \end{minipage}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.3\textheight]{average_cancer_dend.png}
+        \caption{Group Average Hierarchical Clustering (Breast Cancer Dataset)}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=0.3\textheight]{average_waveform_dend.png}
+        \caption{Group Average Hierarchical Clustering (Waveform Dataset)}
+    \end{minipage}
+\end{figure}
+
 
 \section{Conclusion}
-This report evaluates classification and clustering methods on three datasets using WEKA. IBk, J48, AdaBoostM1, and NaiveBayes are
-tested for classification, with AdaBoostM1 using J48 decision trees being the most accurate model across all datasets. SimpleKMeans clustering
-SSE is analyzed for different K values where the lowest error values are associated with the highest k values for each dataset.
+This report demonstrates that both K-means and hierarchical clustering methods effectively identify natural groupings given relatively
+simpler and small datasets. Using Sum of Squared Errors (SSE) and the "elbow method" for optimal \( k \)-selection, the K-means algorithm
+can effectively identify natural groupings in the data while the Single Link, Complete Link and Group Average Hierarchical clustering
+variants further corroborate these groupings through dendrogram visualizations. These visualizations reveal significantly reduced
+\textit{rate of reduction} in inter-cluster distance beyond a certain level of partitioning, indicating a natural stopping point for
+clustering. Overall, the analysis highlights the complementary strengths of K-means and hierarchical clustering in data mining tasks.
 
 \end{document}
